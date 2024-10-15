@@ -1,0 +1,82 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Live-Edit",
+      "type": "shell",
+      "command": "xlog",
+      "args": [
+        "--bind", "0.0.0.0:3000",
+        "--source", "page",
+        "--custom_before_view", "_header.md",
+        "--custom_after_view", "_footer.md",
+        "--custom_css", "fancy.css",
+        "--sitename", "Hackebein",
+        "--sitemap.domain", "hackebein.de",
+        "--rss.domain", "hackebein.de",
+        "--og.domain", "hackebein.de",
+        "--twitter.username", "@hackebein"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Live-Preview",
+      "type": "shell",
+      "command": "xlog",
+      "args": [
+        "--bind", "0.0.0.0:3000",
+        "--source", "page",
+        "--custom_before_view", "_header.md",
+        "--custom_after_view", "_footer.md",
+        "--custom_css", "fancy.css",
+        "--sitename", "Hackebein",
+        "--sitemap.domain", "hackebein.de",
+        "--rss.domain", "hackebein.de",
+        "--og.domain", "hackebein.de",
+        "--twitter.username", "@hackebein",
+        "--readonly"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Quick-Build",
+      "type": "shell",
+      "command": "sh",
+      "args": [
+        "-c",
+        "rm -rf output && cp -a page output && xlog --build . --source output --custom_before_view _header.md --custom_after_view _footer.md --custom_css fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein' && find output -name *.md -delete"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "DNS-Push",
+      "type": "shell",
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-it",
+        "-v",
+        "$(pwd)/dns:/dns",
+        "ghcr.io/stackexchange/dnscontrol",
+        "push"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "DNS-Preview",
+      "type": "shell",
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-it",
+        "-v",
+        "$(pwd)/dns:/dns",
+        "ghcr.io/stackexchange/dnscontrol",
+        "preview"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

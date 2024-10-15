@@ -16,5 +16,6 @@
 			"label": "xlog-bin"
 		}
 	},
-	"postCreateCommand": "go install github.com/emad-elsaid/xlog/cmd/xlog@latest;xlog --bind 0.0.0.0:3000 --source page --custom_before_view _header.md --custom_after_view _footer.md --custom_css fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein'"
+	"postCreateCommand": "go install github.com/emad-elsaid/xlog/cmd/xlog@latest;docker run --rm -it -v \"$(pwd)/dns:/dns\" ghcr.io/stackexchange/dnscontrol write-types",
+	"postStartCommand": "xlog --bind 0.0.0.0:3000 --source page --custom_before_view _header.md --custom_after_view _footer.md --custom_css fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein'"
 }
