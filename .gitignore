@@ -1,2 +1,5 @@
-output/
 dns/types-dnscontrol.d.ts
+page/*.versions/
+page/public/
+page/starred.md
+output/
