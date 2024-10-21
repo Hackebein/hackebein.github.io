@@ -16,5 +16,5 @@
 			"label": "xlog-bin"
 		}
 	},
-	"postCreateCommand": "go install github.com/emad-elsaid/xlog/cmd/xlog@latest;docker run --rm -it -v \"$(pwd)/dns:/dns\" ghcr.io/stackexchange/dnscontrol write-types"
+	"postCreateCommand": "echo -n \"$GPG_PRIVATE_KEY\" | base64 --decode | gpg --import; echo \"$GPG_PRIVATE_ID:6:\" | gpg --import-ownertrust; go install github.com/emad-elsaid/xlog/cmd/xlog@latest; docker run --rm -it -v \"$(pwd)/dns:/dns\" ghcr.io/stackexchange/dnscontrol write-types"
 }

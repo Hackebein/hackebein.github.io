@@ -15,7 +15,8 @@
         "--sitemap.domain", "hackebein.de",
         "--rss.domain", "hackebein.de",
         "--og.domain", "hackebein.de",
-        "--twitter.username", "@hackebein"
+        "--twitter.username", "@hackebein",
+        "--gpg", "17A1B2D91A47EE5023925E01EDA4CF550300BA42"
       ],
       "problemMatcher": []
     },
