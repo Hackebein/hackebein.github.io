@@ -6,11 +6,11 @@
       "type": "shell",
       "command": "xlog",
       "args": [
-        "--bind", "0.0.0.0:3000",
+        "--bind", "0.0.0.0:8080",
         "--source", "page",
         "--custom_before_view", "_header.md",
         "--custom_after_view", "_footer.md",
-        "--custom_css", "fancy.css",
+        "--custom_css", "/fancy.css",
         "--sitename", "Hackebein",
         "--sitemap.domain", "hackebein.de",
         "--rss.domain", "hackebein.de",
@@ -21,31 +21,32 @@
       "problemMatcher": []
     },
     {
-      "label": "Live-Preview",
-      "type": "shell",
-      "command": "xlog",
-      "args": [
-        "--bind", "0.0.0.0:3000",
-        "--source", "page",
-        "--custom_before_view", "_header.md",
-        "--custom_after_view", "_footer.md",
-        "--custom_css", "fancy.css",
-        "--sitename", "Hackebein",
-        "--sitemap.domain", "hackebein.de",
-        "--rss.domain", "hackebein.de",
-        "--og.domain", "hackebein.de",
-        "--twitter.username", "@hackebein",
-        "--readonly"
-      ],
-      "problemMatcher": []
-    },
-    {
-      "label": "Quick-Build",
+      "label": "Build",
       "type": "shell",
       "command": "sh",
       "args": [
         "-c",
-        "rm -rf output && cp -a page output && xlog --build . --source output --custom_before_view _header.md --custom_after_view _footer.md --custom_css fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein' && find output -name *.md -delete"
+        "cp -a page output.new && xlog --build . --source output.new --custom_before_view _header.md --custom_after_view _footer.md --custom_css /fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein' --custom_head _head.html && find output.new -name *.md -delete; find output.new -name *.md.pgp -delete; rm output.new/_head.html; mv output output.old; mv output.new output; rm -rf output.old"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Watch-and-Build",
+      "type": "shell",
+      "command": "sh",
+      "args": [
+        "-c",
+        "rm -rf output; cp -a page output && xlog --build . --source output --custom_before_view _header.md --custom_after_view _footer.md --custom_css /fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein' --custom_head _head.html && find output -name *.md -delete; find output -name *.md.pgp -delete; rm output/_head.html; while inotifywait -r -e modify,create,delete,move page; do cp -a page output.new && xlog --build . --source output.new --custom_before_view _header.md --custom_after_view _footer.md --custom_css /fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein' --custom_head _head.html && find output.new -name *.md -delete; find output.new -name *.md.pgp -delete; rm output.new/_head.html; mv output output.old; mv output.new output; rm -rf output.old; done"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Serve-Output",
+      "type": "shell",
+      "command": "sh",
+      "args": [
+        "-c",
+        "live-server --no-css-inject --entry-file=index.html --wait=100 output"
       ],
       "problemMatcher": []
     },
