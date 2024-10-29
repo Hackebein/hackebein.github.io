@@ -44,13 +44,15 @@ jobs:
           --source page \
           --custom_before_view _header.md \
           --custom_after_view _footer.md \
-          --custom_css fancy.css \
+          --custom_css /fancy.css \
           --sitename "Hackebein" \
           --sitemap.domain "hackebein.de" \
           --rss.domain "hackebein.de" \
           --og.domain "hackebein.de" \
           --twitter.username "@hackebein"
           find page -name *.md -delete
+          find page -name *.md.pgp -delete
+          rm page/_head.html
           chmod -R 0777 page
 
       - name: Upload GitHub Pages artifact
