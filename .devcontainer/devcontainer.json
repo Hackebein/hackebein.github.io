@@ -6,7 +6,8 @@
 				"streetsidesoftware.code-spell-checker",
 				"DavidAnson.vscode-markdownlint",
 				"shd101wyy.markdown-preview-enhanced",
-				"bierner.github-markdown-preview"
+				"bierner.github-markdown-preview",
+				"actboy168.tasks"
 			]
 		}
 	},
