@@ -13,3 +13,6 @@ Hackebein's VPM Listing: [vpm.hackebein.dev](https://vpm.hackebein.dev)
 
 ### Project Overview
 [Task Overview](https://github.com/users/Hackebein/projects/4)
+
+## Gallery
+![Vive tracker laying on hand in VRChat](tracker_laying_on_hand.jpg)
