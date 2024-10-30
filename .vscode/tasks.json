@@ -26,7 +26,7 @@
       "command": "sh",
       "args": [
         "-c",
-        "cp -a page output.new && xlog --build . --source output.new --custom_before_view _header.md --custom_after_view _footer.md --custom_css /fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein' --custom_head _head.html && find output.new -name *.md -delete; find output.new -name *.md.pgp -delete; rm output.new/_head.html; mv output output.old; mv output.new output; rm -rf output.old"
+        "rm -rf output.new; cp -a page output.new && xlog --build . --source output.new --custom_before_view _header.md --custom_after_view _footer.md --custom_css /fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein' --custom_head _head.html && find output.new -name *.md -delete; find output.new -name *.md.pgp -delete; rm output.new/_head.html; mv output output.old; mv output.new output; rm -rf output.old"
       ],
       "problemMatcher": []
     },
@@ -36,7 +36,7 @@
       "command": "sh",
       "args": [
         "-c",
-        "rm -rf output; cp -a page output && xlog --build . --source output --custom_before_view _header.md --custom_after_view _footer.md --custom_css /fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein' --custom_head _head.html && find output -name *.md -delete; find output -name *.md.pgp -delete; rm output/_head.html; while inotifywait -r -e modify,create,delete,move page; do cp -a page output.new && xlog --build . --source output.new --custom_before_view _header.md --custom_after_view _footer.md --custom_css /fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein' --custom_head _head.html && find output.new -name *.md -delete; find output.new -name *.md.pgp -delete; rm output.new/_head.html; mv output output.old; mv output.new output; rm -rf output.old; done"
+        "rm -rf output output.new; cp -a page output && xlog --build . --source output --custom_before_view _header.md --custom_after_view _footer.md --custom_css /fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein' --custom_head _head.html && find output -name *.md -delete; find output -name *.md.pgp -delete; rm output/_head.html; while inotifywait -r -e modify,create,delete,move page; do cp -a page output.new && xlog --build . --source output.new --custom_before_view _header.md --custom_after_view _footer.md --custom_css /fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein' --custom_head _head.html && find output.new -name *.md -delete; find output.new -name *.md.pgp -delete; rm output.new/_head.html; mv output output.old; mv output.new output; rm -rf output.old; done"
       ],
       "problemMatcher": []
     },
