@@ -1,0 +1,12 @@
+{
+    "markdownlint.config": {
+        "MD041": false, // Headline is taken from file name
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.markdownlint": "always"
+    },
+    "cSpell.words": [
+        "Hackebein",
+        "VRChat"
+    ]
+}

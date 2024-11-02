@@ -1,6 +1,7 @@
 I've been maintaining my own homepage for over 25 years, starting in the early days of the internet with Microsoft FrontPage. Over time, my homepage evolved alongside technology. I experimented with different platforms and tools, adapting to new standards and exploring modern frameworks. Yet, sometimes evolution meant doing less — like when my latest homepage was just a simple text file.
 
 \* 2021, † 2024
+
 ```text
 [root@hackebein.de ~]# cat /etc/motd
  _______ _     _       _       _    _            _        _          _       
