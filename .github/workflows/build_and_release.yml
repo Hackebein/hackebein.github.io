@@ -32,33 +32,18 @@ jobs:
 
       - name: Install xlog
         env:
-          XLOG_VERSION: v1.6.6
+          XLOG_VERSION: latest
         run: |
-          curl -vvv --location -o ../xlog.tar.gz https://github.com/emad-elsaid/xlog/releases/download/${XLOG_VERSION}/xlog-${XLOG_VERSION}-linux-amd64.tar.gz
-          tar -xvf ../xlog.tar.gz -C ..          
+          go install github.com/emad-elsaid/xlog/cmd/xlog@${XLOG_VERSION}
 
       - name: Build
         run: |
-          ../xlog \
-          --build . \
-          --source page \
-          --custom_before_view _header.md \
-          --custom_after_view _footer.md \
-          --custom_css /fancy.css \
-          --sitename "Hackebein" \
-          --sitemap.domain "hackebein.de" \
-          --rss.domain "hackebein.de" \
-          --og.domain "hackebein.de" \
-          --twitter.username "@hackebein"
-          find page -name *.md -delete
-          find page -name *.md.pgp -delete
-          rm page/_head.html
-          chmod -R 0777 page
+          scripts/build.sh
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3.0.1
         with:
-          path: page
+          path: output
 
   deploy:
     environment:

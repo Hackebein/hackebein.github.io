@@ -2,11 +2,11 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Live-Edit",
+      "label": "Xlog - Live-Edit (:8081)",
       "type": "shell",
       "command": "xlog",
       "args": [
-        "--bind", "0.0.0.0:8080",
+        "--bind", "0.0.0.0:8081",
         "--source", "page",
         "--custom_before_view", "_header.md",
         "--custom_after_view", "_footer.md",
@@ -18,61 +18,61 @@
         "--twitter.username", "@hackebein",
         "--gpg", "17A1B2D91A47EE5023925E01EDA4CF550300BA42"
       ],
-      "problemMatcher": []
+      "problemMatcher": [],
+      "options": {
+        "statusbar": {
+          "label": "$(browser) Xlog - Live-Edit"
+        }
+      }
     },
     {
-      "label": "Build",
+      "label": "Dev - Build",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-i",
+        "scripts/build.sh"
+      ],
+      "problemMatcher": [],
+      "options": {
+        "statusbar": {
+          "label": "$(run) Dev - Build"
+        }
+      }
+    },
+    {
+      "label": "Dev - Watch and Build",
       "type": "shell",
       "command": "sh",
       "args": [
         "-c",
-        "rm -rf output.new; cp -a page output.new && xlog --build . --source output.new --custom_before_view _header.md --custom_after_view _footer.md --custom_css /fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein' --custom_head _head.html && find output.new -name *.md -delete; find output.new -name *.md.pgp -delete; rm output.new/_head.html; mv output output.old; mv output.new output; rm -rf output.old"
+        "bash -i scripts/build.sh; while inotifywait -r -e modify,create,delete,move page; do bash -i scripts/build.sh; done"
       ],
-      "problemMatcher": []
+      "problemMatcher": [],
+      "options": {
+        "statusbar": {
+          "label": "$(debug-rerun) Dev - Watch and Build"
+        }
+      }
     },
     {
-      "label": "Watch-and-Build",
+      "label": "Dev - Serve Output (:8080)",
       "type": "shell",
-      "command": "sh",
+      "command": "live-server",
       "args": [
-        "-c",
-        "rm -rf output output.new; cp -a page output && xlog --build . --source output --custom_before_view _header.md --custom_after_view _footer.md --custom_css /fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein' --custom_head _head.html && find output -name *.md -delete; find output -name *.md.pgp -delete; rm output/_head.html; while inotifywait -r -e modify,create,delete,move page; do cp -a page output.new && xlog --build . --source output.new --custom_before_view _header.md --custom_after_view _footer.md --custom_css /fancy.css --sitename 'Hackebein' --sitemap.domain 'hackebein.de' --rss.domain 'hackebein.de' --og.domain 'hackebein.de' --twitter.username '@hackebein' --custom_head _head.html && find output.new -name *.md -delete; find output.new -name *.md.pgp -delete; rm output.new/_head.html; mv output output.old; mv output.new output; rm -rf output.old; done"
+        "--no-css-inject",
+        "--entry-file=index.html",
+        "output"
       ],
-      "problemMatcher": []
+      "problemMatcher": [],
+      "options": {
+        "statusbar": {
+          "label": "$(browser) Dev - Serve Output (:8080)"
+        }
+      }
     },
     {
-      "label": "Serve-Output",
-      "type": "shell",
-      "command": "sh",
-      "args": [
-        "-c",
-        "live-server --no-css-inject --entry-file=index.html --wait=100 output"
-      ],
-      "problemMatcher": []
-    },
-    {
-      "label": "DNS-Push",
-      "type": "shell",
-      "command": "docker",
-      "args": [
-        "run",
-        "--rm",
-        "-it",
-        "-v",
-        "$(pwd)/dns:/dns",
-        "-e",
-        "OVH_CONSUMER_KEY",
-        "-e",
-        "OVH_APP_SECRET_KEY",
-        "-e",
-        "OVH_APP_KEY",
-        "ghcr.io/stackexchange/dnscontrol",
-        "push"
-      ],
-      "problemMatcher": []
-    },
-    {
-      "label": "DNS-Preview",
+      "label": "DNS - Preview",
       "type": "shell",
       "command": "docker",
       "args": [
@@ -90,7 +90,38 @@
         "ghcr.io/stackexchange/dnscontrol",
         "preview"
       ],
-      "problemMatcher": []
+      "problemMatcher": [],
+      "options": {
+        "statusbar": {
+          "label": "$(console) DNS - Preview"
+        }
+      }
+    },
+    {
+      "label": "DNS - Push",
+      "type": "shell",
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-it",
+        "-v",
+        "$(pwd)/dns:/dns",
+        "-e",
+        "OVH_CONSUMER_KEY",
+        "-e",
+        "OVH_APP_SECRET_KEY",
+        "-e",
+        "OVH_APP_KEY",
+        "ghcr.io/stackexchange/dnscontrol",
+        "push"
+      ],
+      "problemMatcher": [],
+      "options": {
+        "statusbar": {
+          "label": "$(console) DNS - Push"
+        }
+      }
     }
   ]
 }
