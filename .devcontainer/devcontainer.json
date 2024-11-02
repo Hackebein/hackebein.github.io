@@ -19,5 +19,5 @@
 			"label": "http - xlog"
 		}
 	},
-	"postCreateCommand": "bash -i .devcontainer/post_create.sh"
+	"postCreateCommand": "bash .devcontainer/post_create.sh"
 }

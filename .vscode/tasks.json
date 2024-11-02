@@ -36,7 +36,6 @@
       "type": "shell",
       "command": "bash",
       "args": [
-        "-i",
         "scripts/build.sh"
       ],
       "problemMatcher": [],
@@ -52,7 +51,7 @@
       "command": "sh",
       "args": [
         "-c",
-        "bash -i scripts/build.sh; while inotifywait -r -e modify,create,delete,move page; do bash -i scripts/build.sh; done"
+        "bash scripts/build.sh; while inotifywait -r -e modify,create,delete,move page; do bash scripts/build.sh; done"
       ],
       "isBackground": true,
       "problemMatcher": [],
