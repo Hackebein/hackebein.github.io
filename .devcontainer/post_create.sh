@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Install GPG key
 echo -n "$GPG_PRIVATE_KEY" | base64 --decode | gpg --import

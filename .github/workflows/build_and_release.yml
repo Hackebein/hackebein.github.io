@@ -38,6 +38,7 @@ jobs:
 
       - name: Build
         run: |
+          export PATH="$(go env GOPATH)/bin:$PATH"
           bash scripts/build.sh
 
       - name: Upload GitHub Pages artifact
