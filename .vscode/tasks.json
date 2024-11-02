@@ -18,7 +18,13 @@
         "--twitter.username", "@hackebein",
         "--gpg", "17A1B2D91A47EE5023925E01EDA4CF550300BA42"
       ],
+      "isBackground": true,
       "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+      },
       "options": {
         "statusbar": {
           "label": "$(browser) Xlog - Live-Edit"
@@ -48,7 +54,13 @@
         "-c",
         "bash -i scripts/build.sh; while inotifywait -r -e modify,create,delete,move page; do bash -i scripts/build.sh; done"
       ],
+      "isBackground": true,
       "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+      },
       "options": {
         "statusbar": {
           "label": "$(debug-rerun) Dev - Watch and Build"
@@ -64,7 +76,13 @@
         "--entry-file=index.html",
         "output"
       ],
+      "isBackground": true,
       "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+      },
       "options": {
         "statusbar": {
           "label": "$(browser) Dev - Serve Output (:8080)"
@@ -120,6 +138,48 @@
       "options": {
         "statusbar": {
           "label": "$(console) DNS - Push"
+        }
+      }
+    },
+    {
+      "label": "GPG - Decrypt current file",
+      "type": "shell",
+      "command": "sh",
+      "args": [
+        "-c",
+        "gpg -o ${fileDirname}/${fileBasenameNoExtension} --decrypt ${file}; rm ${file}; code ${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+      },
+      "options": {
+        "statusbar": {
+          "label": "$(unlock) GPG - Decrypt"
+        }
+      }
+    },
+    {
+      "label": "GPG - Encrypt current files",
+      "type": "shell",
+      "command": "sh",
+      "args": [
+        "-c",
+        "gpg --recipient 17A1B2D91A47EE5023925E01EDA4CF550300BA42 -o ${file}.pgp --encrypt ${file}; rm ${file}; code ${file}.pgp"
+      ],
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+      },
+      "options": {
+        "statusbar": {
+          "label": "$(lock) GPG - Encrypt"
         }
       }
     }
