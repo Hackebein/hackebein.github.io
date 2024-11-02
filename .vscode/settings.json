@@ -3,7 +3,7 @@
         "MD041": false, // Headline is taken from file name
     },
     "editor.codeActionsOnSave": {
-        "source.fixAll.markdownlint": "always"
+        "source.fixAll.markdownlint": "explicit"
     },
     "cSpell.words": [
         "Hackebein",

@@ -1,22 +1,5 @@
 Track your real objects and track them in VRChat. All SteamVR/OpenVR supported trackers are supported. [Demo](https://x.com/Hackebein/status/1817729114142343460)
 
-Needs App. Available on:
-
-* [Steam](https://store.steampowered.com/app/3140770) (soon[^1])
-* [Github](https://github.com/Hackebein/Object-Tracking-App/releases)
-
-[^1]: beta keys can be requested via support
-
-Hackebein's VPM Listing: [vpm.hackebein.dev](https://vpm.hackebein.dev)
-
-## Support
-
-* [Hackebein's Research Lab](https://discord.gg/AqCwGqqQmW) at discord.gg
-
-## Project Overview
-
-[Task Overview](https://github.com/users/Hackebein/projects/4)
-
 ## History
 
 On February 16, 2022, VRChat announced support for OSC[^2]. Four months later, I assembled an ESP32 integrated with an IMU sensor and attached it to my pole to monitor its rotation speed. My objective was to transmit this data to my PC and relay it through OSC into VRChat. This would enable the visualization of rotation speed and trigger corresponding effects based on that speed. Initially, I envisioned using a candy cane as a festive Christmas pole. However, by December 2022, the concept had evolved to accommodate a different type of pole from the same manufacturer. The "X-Fly"[^5] pole features a top connected with a rope or chain, while the bottom remains loose. The primary challenge was determining the pole's angle and transmitting this information. I tried to locate the pole within the room without success while using an IMU. Up to this point, the project was known as "Pole Sync".
@@ -32,8 +15,18 @@ In April 2023, I presented a proof of concept (POC) to some friends and began da
 
 ## Motivation
 
-Being immersed
+Being immersed. Immersive interaction with objects, both for myself and others. Imagine lifting a bottle to take a refreshing sip of water, moving a chair to sit down, patting your cat on her tree, tracking your camera in its gimbal, or bringing your studio setup with you. These are just a few of the possibilities. Tracking a bottle with VRC Tracked Objects[^6] by jangxx.
+
+I hope many people will discover this tool and use it to create something creative. Don't forget to share your creations on my socials.
+
+[^6]: Github Project, [VRC Tracked Objects](https://github.com/jangxx/VRC-Tracked-Objects) at github.com
 
 ## Gallery
 
 ![Vive tracker laying on hand in VRChat](tracker_laying_on_hand.jpg)
+![Cup using vive tracker as tripod](cup_staying_on_tracker.png)
+
+## Resources
+
+* [Setup](https://github.com/Hackebein/Object-Tracking-Unitypackage/blob/main/README.md)
+* [Task Overview](https://github.com/users/Hackebein/projects/4)
