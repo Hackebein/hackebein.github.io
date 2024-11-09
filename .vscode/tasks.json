@@ -146,7 +146,7 @@
       "command": "sh",
       "args": [
         "-c",
-        "gpg -o ${fileDirname}/${fileBasenameNoExtension} --decrypt ${file}; rm ${file}; code ${fileDirname}/${fileBasenameNoExtension}"
+        "gpg -o \"${fileDirname}/${fileBasenameNoExtension}\" --decrypt \"${file}\"; rm \"${file}\"; code \"${fileDirname}/${fileBasenameNoExtension}\""
       ],
       "isBackground": true,
       "problemMatcher": [],
@@ -167,7 +167,7 @@
       "command": "sh",
       "args": [
         "-c",
-        "gpg --recipient 17A1B2D91A47EE5023925E01EDA4CF550300BA42 -o ${file}.pgp --encrypt ${file}; rm ${file}; code ${file}.pgp"
+        "gpg --recipient 17A1B2D91A47EE5023925E01EDA4CF550300BA42 -o \"${file}.pgp\" --encrypt \"${file}\"; rm \"${file}\"; code \"${file}.pgp\""
       ],
       "isBackground": true,
       "problemMatcher": [],
