@@ -8,9 +8,8 @@
       "args": [
         "--bind", "0.0.0.0:8081",
         "--source", "page",
-        "--custom_before_view", "../page.parts/_header.md",
-        "--custom_after_view", "../page.parts/_footer.md",
-        "--custom_css", "/fancy.css",
+        "--custom.before_view", "../page.parts/_header.md",
+        "--custom.after_view", "../page.parts/_footer.md",
         "--sitename", "Hackebein",
         "--sitemap.domain", "hackebein.de",
         "--rss.domain", "hackebein.de",
