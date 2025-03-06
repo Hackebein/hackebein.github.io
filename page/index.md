@@ -64,10 +64,3 @@ image: https://github.com/Hackebein.png
 website: https://www.xing.com/profile/Lars_Olzem
 byline: at Xing
 ```
-
-```person
-name: Hackebein
-image: https://github.com/Hackebein.png
-website: https://s.team/u/hackebein
-byline: at Steam
-```
