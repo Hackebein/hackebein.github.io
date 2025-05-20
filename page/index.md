@@ -47,13 +47,6 @@ byline: at Steam
 ```person
 name: Hackebein
 image: https://github.com/Hackebein.png
-website: https://t.me/Hackebein
-byline: at Telegram
-```
-
-```person
-name: Hackebein
-image: https://github.com/Hackebein.png
 website: https://vrchat.com/home/user/usr_40be82e7-f7d5-4548-b314-3fc7b26d22ee
 byline: at VRChat
 ```
@@ -63,4 +56,11 @@ name: Lars Olzem
 image: https://github.com/Hackebein.png
 website: https://www.xing.com/profile/Lars_Olzem
 byline: at Xing
+```
+
+```person
+name: Lars Olzem
+image: https://github.com/Hackebein.png
+website: https://www.xing.com/profile/Lars_Olzem
+byline: at LinkedIn
 ```
