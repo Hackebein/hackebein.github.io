@@ -61,6 +61,6 @@ byline: at Xing
 ```person
 name: Lars Olzem
 image: https://github.com/Hackebein.png
-website: https://www.xing.com/profile/Lars_Olzem
+website: https://www.linkedin.com/in/lars-olzem-23773b352/
 byline: at LinkedIn
 ```
