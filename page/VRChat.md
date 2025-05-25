@@ -3,6 +3,7 @@ My VR journey began at Gamescom 2014, where Elite Dangerous showcased the first 
 Despite its limitations, VRChat's huge user base is remarkable. Socializing and creating there is both engaging and fun. Over the years, I've worked on several projects—alone or with others—including:
 
 - Object Tracking
+- VPM Mirror
 - Citizen of VRChat (unreleased game)
 - VRCRecords
 - Music Train Truck (unreleased project)

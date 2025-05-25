@@ -1,7 +1,7 @@
 Hi, I'm Lars (alias Hackebein), located in Germany. Full time nerd, Full stack and DevOps engineer at day, VR addicted at night.
 
 I'm engineering and operating e-commerce platforms for more then 12 years.
-I'm currently working on a [VPM Mirror](https://vpmm.hackebein.dev) and [Object Tracking](/Object%20Tracking).
+I'm currently working on a VPM Mirror and Object Tracking.
 
 # Platform Links
 
