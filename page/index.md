@@ -1,4 +1,4 @@
-Hi, I'm Lars (alias Hackebein), located in Germany. Full time nerd, Full stack and DevOps engineer at day, VR addicted at night.
+Hi, I'm Lars (alias Hackebein), located in Germany. Full time nerd, Full stack and DevOps engineer at day, VR addicted at night. I love pro active working on automatization and to have fun with what i create.
 
 I'm engineering and operating e-commerce platforms for more then 12 years.
 I'm currently working on a VPM Mirror and Object Tracking.
