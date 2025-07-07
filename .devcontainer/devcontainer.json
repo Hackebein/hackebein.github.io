@@ -1,4 +1,5 @@
 {
+	"image": "mcr.microsoft.com/devcontainers/go:1.24",
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -8,6 +9,17 @@
 				"bierner.github-markdown-preview",
 				"actboy168.tasks"
 			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/sshd:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"version": "latest"
 		}
 	},
 	"forwardPorts": [8080, 8081],
