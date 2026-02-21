@@ -34,6 +34,14 @@ byline: at Discord
 ```
 
 ```person
+name: Hackebein's Research Lab
+image: https://github.com/Hackebein.png
+website: https://discord.com/invite/AqCwGqqQmW
+byline: at Discord
+```
+
+
+```person
 name: hackebein@gmail.com
 image: https://github.com/Hackebein.png
 website: mailto:hackebein@gmail.com
@@ -66,4 +74,11 @@ name: Lars Olzem
 image: https://github.com/Hackebein.png
 website: https://www.linkedin.com/in/lars-olzem-23773b352/
 byline: at LinkedIn
+```
+
+```person
+name: Lars Olzem
+image: https://github.com/Hackebein.png
+website: https://www.patreon.com/hackebein
+byline: at Patreon
 ```
