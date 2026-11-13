@@ -6,7 +6,7 @@
   Bringing physical props into VRChat with SteamVR trackers.
 
 - ![The direct feed and VRChat capture in VaOBS](/VaOBS/playback-offset.svg)
-  **[VaOBS](https://github.com/Hackebein/VaOBS)**
+  **[VaOBS](/VaOBS/)**
 
   An OBS plugin that keeps audio from VRChat video players in sync.
 
