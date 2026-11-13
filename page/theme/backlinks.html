@@ -1,0 +1,17 @@
+{{ if .pages }}
+<section class="page-backlinks" aria-labelledby="backlinks-heading">
+  <h2 id="backlinks-heading">Backlinks</h2>
+  <ul>
+    {{ range .pages }}
+    <li><a href="/{{ .Name }}" dir="auto">
+      {{- emoji . -}}
+      {{- with (properties .).title -}}
+        {{ .Value }}
+      {{- else -}}
+        {{ base .Name }}
+      {{- end -}}
+    </a></li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
