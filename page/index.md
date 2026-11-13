@@ -15,6 +15,21 @@
   </div>
 </section>
 
+<section class="home-section" id="writing" aria-labelledby="writing-title">
+  <div class="section-heading"><h2 id="writing-title">Writing</h2></div>
+  <div class="writing-feature">
+    <div>
+      <h3><a href="/How%20VaOBS%20stays%20in%20sync/">How VaOBS stays in sync</a></h3>
+      <p>VRChat and OBS can play the same stream at different times. VaOBS compares the two audio feeds to work out how much delay to add.</p>
+      <a class="read-link" href="/How%20VaOBS%20stays%20in%20sync/">Read article</a>
+    </div>
+    <figure class="signal">
+      <img src="/VaOBS/playback-offset.svg" width="420" height="128" alt="A right-pointing arrow shows the direct feed moving later to match the VRChat capture.">
+      <figcaption>Illustration of the playback offset</figcaption>
+    </figure>
+  </div>
+</section>
+
 <section class="home-section" id="projects" aria-labelledby="projects-title">
   <div class="section-heading"><h2 id="projects-title">Projects</h2></div>
 
