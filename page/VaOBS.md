@@ -1,6 +1,6 @@
-VaOBS is an OBS plugin for streaming VRChat. It opens a direct copy of the stream playing in the world and holds that audio back to match the slower VRChat player.
+VaOBS adds a clean audio source for the VRChat world’s video player in OBS. It takes the audio from its own copy of the stream and delays it to match the picture from VRChat.
 
-[How VaOBS stays in sync](/How%20VaOBS%20stays%20in%20sync/) explains what viewers hear and what the status in OBS means.
+[How VaOBS stays in sync](/How%20VaOBS%20stays%20in%20sync/) explains how it measures and follows that delay.
 
 [VaOBS on GitHub](https://github.com/Hackebein/VaOBS)
 

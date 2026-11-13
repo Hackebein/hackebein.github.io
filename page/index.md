@@ -20,7 +20,7 @@
   <div class="writing-feature">
     <div>
       <h3><a href="/How%20VaOBS%20stays%20in%20sync/">How VaOBS stays in sync</a></h3>
-      <p>VRChat’s video player can lag behind the direct audio in OBS. VaOBS holds that audio back so viewers hear it at the right moment in the stream.</p>
+      <p>VaOBS gives OBS a clean audio source for the VRChat world’s video player. It delays that audio to match the picture from VRChat.</p>
       <a class="read-link" href="/How%20VaOBS%20stays%20in%20sync/">Read article</a>
     </div>
     <figure class="signal">
