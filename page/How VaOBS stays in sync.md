@@ -1,23 +1,52 @@
-Playing the same stream in VRChat and OBS gives you two players with their own buffering and playback timing. A recording can have clean audio and still have it arrive ahead of what happened in-world.
+When you stream a VRChat world through OBS, the world's video player is usually behind a direct copy of the same stream. If you send that direct audio straight to OBS, viewers can hear the next beat before the world plays it. VaOBS holds the faster audio back so it lines up with what’s happening in VRChat.
 
-VaOBS lines up its direct audio feed with the audio captured from VRChat. I use that captured sound as the reference for where the stream belongs in the recording.
+VaOBS reads the stream URL from the VRChat log and takes the audio it sends to OBS directly from its own copy of the stream. It works out when to play it by comparing that feed with what the VRChat audio source in OBS is picking up. People can talk over the music or video as long as enough of the original sound comes through for VaOBS to recognize it.
 
-## Finding the offset
+## What you’ll see in OBS
 
-VaOBS reads the media URL from the VRChat log and opens its own copy of the stream. That gives it the audio to record. The timing comes from comparing that feed with what VRChat is actually playing.
+```mermaid
+flowchart TD
+    waiting["Waiting / Scanning / Connecting"] -->|trying streams| searching["Searching"]
+    waiting -->|stream found| syncing["Syncing"]
+    listening["Listening"] -->|reference audio returns| syncing
+    searching --> syncing
+    syncing --> aligned["Aligned"]
+    aligned -->|unclear match| holding["Holding timing"]
+    holding -->|clear match| aligned
+    holding -->|reference goes quiet| listening
+    holding -->|sync lost| syncing
+    holding -->|tries another stream| searching
+    classDef status fill:#181818,stroke:#666,color:#f5f5f5
+    class waiting,listening,searching,syncing,aligned,holding status
+    linkStyle default stroke:#aaa
+    click waiting href "#waiting-for-a-stream" "Waiting, Scanning and Connecting"
+    click listening href "#listening" "Listening"
+    click searching href "#searching-and-syncing" "Searching and Syncing"
+    click syncing href "#searching-and-syncing" "Searching and Syncing"
+    click aligned href "#aligned" "Aligned"
+    click holding href "#holding-timing" "Holding timing"
+```
 
-It keeps a history of both signals on a common timestamp grid. Normalized cross-correlation looks for the point where a recent passage from VRChat best matches the direct feed. The position of that match gives an estimate of how far ahead the direct feed is. VaOBS holds that audio in a buffer until it belongs in the output.
+### Waiting for a stream
 
-![A right-pointing arrow shows the direct feed moving later to match the VRChat capture.](/VaOBS/playback-offset.svg)
+**Waiting** means VaOBS is waiting for a VRChat client or a stream URL. **Scanning** means it’s checking URLs from the log. **Connecting** means it’s waiting for a stream to send audio. If the stream is **Unavailable**, VaOBS can retry. If the URL has expired, reload the player in VRChat. **Paused** means the selected stream is paused.
 
-## Deciding when to trust a match
+### Listening
 
-Silence carries no useful timing information. Repeated beats or phrases can produce several plausible matches. Picking the strongest peak immediately can line up the wrong passage.
+**Listening** means VaOBS needs audible sound from the VRChat audio source in OBS. A silent passage or voices drowning out the stream can make it harder to find a match.
 
-The aligner checks both the strength of a match and how clearly it stands out from competing peaks. VaOBS checks that multiple audio windows give a consistent estimate before setting the initial delay or making a large adjustment. During a temporary loss of confidence it can hold the last reliable delay. If reliable alignment is lost, it mutes the direct output while recalibrating.
+### Searching and syncing
 
-## Following drift
+**Searching** means VaOBS is trying streams from the log. **Syncing** means it’s working out how far behind VRChat is. It keeps a short history of both feeds on the same timeline and slides one against the other to see where they line up best. That’s cross-correlation. A repeating beat can fit in several places, so VaOBS checks that the timing agrees across more than one passage before using it.
 
-The offset can move as the two playback paths run. Once alignment is established, VaOBS tracks nearby changes, estimates the drift, and uses that estimate to adjust the buffered playback. Larger jumps go through the acquisition checks again.
+![The direct feed moves later to line up with the audio captured from VRChat.](/VaOBS/playback-offset.svg)
+
+### Aligned
+
+**Aligned** shows how much delay VaOBS is adding to the direct feed. That gives viewers the direct audio at the moment it belongs in the world. VaOBS follows small changes in timing as the two players run.
+
+### Holding timing
+
+If the match gets unclear for a while, VaOBS can keep using the last reliable delay. You may see **Aligned** with a note that it’s holding timing, or **Listening** if reference audio drops out. A big jump needs a fresh match. If VaOBS loses sync, it mutes its own output while it looks for a match again.
 
 [Alignment code](https://github.com/Hackebein/VaOBS/blob/v1.4.0/src/alignment.hpp) · [OBS integration](https://github.com/Hackebein/VaOBS/blob/v1.4.0/src/plugin.cpp)
