@@ -111,4 +111,9 @@ I hope many people will discover this tool and use it to create something creati
   <figcaption>Tybi lifts a tracked chair, October 2026</figcaption>
 </figure>
 
+<figure class="signal">
+  <img src="halloween-aerial-hoop-2026.jpg" alt="My Halloween avatar on a glowing crescent hoop suspended from a wooden gallows in VRChat" loading="lazy" width="2160" height="3840">
+  <figcaption>Halloween aerial hoop, October 2026</figcaption>
+</figure>
+
 </div>
