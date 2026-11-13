@@ -1,4 +1,4 @@
-VaOBS adds a clean audio source for the VRChat world’s video player in OBS. It takes the audio from its own copy of the stream and delays it to match the picture from VRChat.
+VaOBS adds a clean audio source for the VRChat world’s video player in OBS. It takes the audio from the stream and delays it to match the picture in VRChat.
 
 [How VaOBS stays in sync](/How%20VaOBS%20stays%20in%20sync/) explains how it measures and follows that delay.
 

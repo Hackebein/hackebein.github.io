@@ -1,6 +1,6 @@
-When you capture VRChat in OBS, voices, menu sounds, world audio, and the video player all come through in one mix. VaOBS adds a second audio source with just the video player’s sound. That gives you a clean source you can record separately, timed to the picture from VRChat.
+When you capture VRChat in OBS, voices, menu sounds, world audio, and the video player all come through in one mix. VaOBS adds an audio source so you can record the VRChat window with just the video player’s sound.
 
-VaOBS gets the stream URL from the VRChat log and takes its clean audio directly from its own copy of that stream. The player in VRChat runs behind that copy. Play the clean feed straight away and you might hear a drum hit before you see it in the world. VaOBS buffers the clean feed to match the slower player.
+VaOBS gets the stream URL from the VRChat log, takes the audio from the stream, and delays it to match the picture in VRChat.
 
 ## How the sync works
 
