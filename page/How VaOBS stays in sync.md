@@ -1,23 +1,34 @@
-Playing the same stream in VRChat and OBS gives you two players with their own buffering and playback timing. A recording can have clean audio and still have it arrive ahead of what happened in-world.
+When you capture VRChat in OBS, voices, menu sounds, world audio, and the video player all come through in one mix. VaOBS adds an audio source so you can record the VRChat window with just the video player’s sound.
 
-VaOBS lines up its direct audio feed with the audio captured from VRChat. I use that captured sound as the reference for where the stream belongs in the recording.
+VaOBS gets the stream URL from the VRChat log, takes the audio from the stream, and delays it to match the picture in VRChat.
 
-## Finding the offset
+## How the sync works
 
-VaOBS reads the media URL from the VRChat log and opens its own copy of the stream. That gives it the audio to record. The timing comes from comparing that feed with what VRChat is actually playing.
+```mermaid
+flowchart TD
+    syncing["Syncing"] -->|delay confirmed| aligned["Aligned"]
+    aligned -->|match gets unclear| holding["Holding timing"]
+    holding -->|match clears up| aligned
+    holding -->|sync lost| syncing
+    classDef status fill:#181818,stroke:#666,color:#f5f5f5
+    class syncing,aligned,holding status
+    click syncing href "#finding-the-delay" "Finding the delay"
+    click aligned href "#aligned" "Aligned"
+    click holding href "#holding-timing" "Holding timing"
+```
 
-It keeps a history of both signals on a common timestamp grid. Normalized cross-correlation looks for the point where a recent passage from VRChat best matches the direct feed. The position of that match gives an estimate of how far ahead the direct feed is. VaOBS holds that audio in a buffer until it belongs in the output.
+### Finding the delay
 
-![A right-pointing arrow shows the direct feed moving later to match the VRChat capture.](/VaOBS/playback-offset.svg)
+VaOBS measures the delay by comparing the clean feed with what OBS actually hears from VRChat. It keeps a short history of both on the same clock, then looks for where a recent passage from the VRChat mix lines up best with the clean feed. That comparison is called cross-correlation. People can talk over the music as long as enough of it is still audible to match.
 
-## Deciding when to trust a match
+![The same passage arrives earlier in the clean feed. VaOBS shifts it later to line up with the VRChat capture.](/VaOBS/playback-offset.svg)
 
-Silence carries no useful timing information. Repeated beats or phrases can produce several plausible matches. Picking the strongest peak immediately can line up the wrong passage.
+### Aligned
 
-The aligner checks both the strength of a match and how clearly it stands out from competing peaks. VaOBS checks that multiple audio windows give a consistent estimate before setting the initial delay or making a large adjustment. During a temporary loss of confidence it can hold the last reliable delay. If reliable alignment is lost, it mutes the direct output while recalibrating.
+Once VaOBS has a consistent match, it adds the measured delay to its own audio. The original VRChat mix is still available in OBS, and the clean source now follows the picture. VaOBS keeps comparing the two signals so it can follow small changes in the delay as the players run.
 
-## Following drift
+### Holding timing
 
-The offset can move as the two playback paths run. Once alignment is established, VaOBS tracks nearby changes, estimates the drift, and uses that estimate to adjust the buffered playback. Larger jumps go through the acquisition checks again.
+If the music goes quiet or gets drowned out, VaOBS can keep using the last delay it could measure. If the timing jumps, it checks the new delay before switching to it. If it loses sync, the clean source goes silent while VaOBS looks for a match again.
 
 [Alignment code](https://github.com/Hackebein/VaOBS/blob/v1.4.0/src/alignment.hpp) · [OBS integration](https://github.com/Hackebein/VaOBS/blob/v1.4.0/src/plugin.cpp)

@@ -1,9 +1,7 @@
-VaOBS is a tool to capture a video playing inside of VRChat directly from OBS as it's own media source.
+VaOBS adds a clean audio source for the VRChat world’s video player in OBS. It takes the audio from the stream and delays it to match the picture in VRChat.
 
-It's recommended to record VRChat's audio on a different track then the Media Source track in OBS, so you can shift the audio in post-processing if needed. This is needed for non-low-latency video playbacks in VRChat, like YouTube videos or Twitch streams.
+[How VaOBS stays in sync](/How%20VaOBS%20stays%20in%20sync/) explains how it measures and follows that delay.
 
-Example Setup in OBS. Application Audio Capture is in sync with Spout2 Capture. The Media Source can be slightly out of sync depending on the source, which is why it's kept on the 2nd Track. Allows later to adjust Track \#2 to Track \#1, to match Spout visuals.
+[VaOBS on GitHub](https://github.com/Hackebein/VaOBS)
 
-![VaOBS example setup for OBS](/public/vaobs_example_obs_setup.png)
-
-First Release 2025-07-05
+First release: 2025-07-05
