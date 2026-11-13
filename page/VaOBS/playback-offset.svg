@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="128" viewBox="0 0 420 128" role="img" aria-labelledby="title description">
+  <title id="title">Direct feed and VRChat capture</title>
+  <desc id="description">The same waveform appears earlier in the direct feed. A right-pointing arrow shows how far it moves to align with the VRChat capture.</desc>
+
+  <defs>
+    <path id="waveform" d="M0 0 8 -1 16 0 24 -3 32 -1 40 -5 48 -2 56 -8 64 -3 72 -10 80 -4 88 -14 96 -6 104 -9 112 -3 120 -5 128 -1 136 -3 144 0 152 -1 160 0 168 -3 176 -1 184 -5 192 -3 200 -7 208 -2 216 -5 224 -2 232 -3 240 -1 248 -2 256 0 264 -1 272 0 264 1 256 0 248 2 240 1 232 3 224 2 216 5 208 2 200 7 192 3 184 5 176 1 168 3 160 0 152 1 144 0 136 3 128 1 120 5 112 3 104 9 96 6 88 14 80 4 72 10 64 3 56 8 48 2 40 5 32 1 24 3 16 0 8 1Z"/>
+  </defs>
+
+  <g fill="none" stroke="#2a2a2a">
+    <rect x=".5" y=".5" width="419" height="127"/>
+    <path d="M52.5 1v126m52.5-126v126m52.5-126v126m52.5-126v126m52.5-126v126m52.5-126v126m52.5-126v126"/>
+  </g>
+  <path d="M13 51.5h394M13 104.5h394" fill="none" stroke="#3a3a3a"/>
+
+  <g font-family="system-ui, sans-serif" font-size="13" font-weight="650">
+    <text x="13" y="21" fill="#f5f5f5">Direct feed</text>
+    <text x="13" y="77" fill="#b7b7b7">VRChat capture</text>
+  </g>
+
+  <use href="#waveform" x="30" y="51" fill="#fff"/>
+  <use href="#waveform" x="74" y="104" fill="#a0a0a0"/>
+  <path d="M118 28h44m-5-4 5 4-5 4" fill="none" stroke="#f5f5f5" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

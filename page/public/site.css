@@ -1,0 +1,232 @@
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("/public/nunito-sans.ttf") format("truetype");
+  font-weight: 200 1000;
+  font-display: swap;
+}
+
+/* The capital H is drawn from the KMFC PCB front silkscreen. */
+@font-face {
+  font-family: "KMFC Mark";
+  src: url("/public/kmfc-mark.ttf") format("truetype");
+  font-weight: 750;
+  font-display: swap;
+  unicode-range: U+0048;
+}
+
+@view-transition { navigation: none; }
+
+:root {
+  color-scheme: dark;
+  --site-bg: #0a0a0a;
+  --site-line: #2a2a2a;
+  --site-text: #fff;
+  --site-muted: #aaa;
+  --site-quiet: #939393;
+  --site-width: 1040px;
+  --site-gutter: clamp(20px, 5vw, 56px);
+  --site-mono: "Cascadia Mono", Consolas, ui-monospace, monospace;
+  --bulma-family-primary: "Nunito Sans", "Segoe UI", system-ui, sans-serif;
+  --bulma-scheme-main: var(--site-bg);
+  --bulma-text: #dedede;
+  --bulma-text-strong: var(--site-text);
+  --bulma-link-text: var(--site-text);
+  background-color: var(--site-bg);
+}
+
+body {
+  background: var(--site-bg);
+  color: var(--site-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-shell,
+body:has(.home-intro) > .container.is-max-desktop {
+  width: min(var(--site-width), calc(100% - 2 * var(--site-gutter)));
+  margin-inline: auto;
+}
+
+.site-header { border-bottom: 1px solid var(--site-line); }
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.header-inner { min-height: 72px; }
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1;
+}
+.brand-mark::before {
+  content: "H";
+  font-family: "KMFC Mark";
+  font-size: .84em;
+  user-select: none;
+}
+.site-nav, .site-footer nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.site-nav a, .site-footer a { color: var(--site-muted); font-size: 14px; }
+.site-nav a:hover, .site-footer a:hover { color: var(--site-text); text-decoration: underline; }
+body a:focus-visible {
+  outline: 2px solid var(--site-text);
+  outline-offset: 4px;
+}
+
+body > .container.is-max-desktop {
+  width: min(68ch, calc(100% - 2 * var(--site-gutter)));
+  max-width: none;
+  padding-top: clamp(40px, 7vw, 80px);
+  font-size: 18px;
+  line-height: 1.7;
+}
+body > .container.is-max-desktop.px-3 { padding-inline: 0 !important; }
+body > .container.is-max-desktop > .title {
+  color: var(--site-text);
+  font-size: clamp(44px, 7vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+body > .container.is-max-desktop > .content > .columns { color: var(--site-muted); font-size: 14px; }
+.view a { text-underline-offset: .24em; }
+.view a[href^="http"]::after { content: none; }
+.view > p a { text-decoration: underline; }
+.view > p { color: #dedede; }
+/* Override xlog's default numbered headings and large heading margins. */
+.content .view :is(h1, h2, h3, h4, h5, h6) {
+  margin: 1.5em 0 .5em !important;
+  padding: 0;
+  border: 0;
+}
+.content .view :is(h1, h2, h3, h4, h5, h6)::before { content: none; }
+.content .view > h2 { color: var(--site-text); font-size: 26px; letter-spacing: -.025em; }
+
+body:has(.home-intro) > .container.is-max-desktop { padding-top: 0; font-size: 16px; line-height: 1.55; }
+body:has(.home-intro) > .container > .content > .columns,
+.view:has(.home-intro) > .table-of-contents { display: none; }
+.home-intro { padding-block: clamp(48px, 7vw, 96px) clamp(32px, 4vw, 52px); }
+.content .view .home-intro h1 {
+  margin: 0 !important;
+  color: var(--site-text);
+  font-size: clamp(54px, 9vw, 100px);
+  font-weight: 760;
+  line-height: .98;
+  letter-spacing: -.066em;
+}
+.home-intro .show-on-parent-hover { display: none !important; }
+.content .home-intro p {
+  max-width: 56ch;
+  margin: 24px 0 0;
+  color: var(--site-muted);
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.52;
+}
+.home-section { border-top: 1px solid var(--site-line); padding-block: 24px 36px; }
+.about-copy { max-width: 68ch; color: #dedede; }
+.content .about-copy p { margin: 0; }
+.content .about-copy p + p { margin-top: 10px; }
+.about-copy a { text-decoration: underline; }
+.section-heading { margin-bottom: 12px; }
+.content .view .section-heading h2 {
+  margin: 0 !important;
+  color: var(--site-muted);
+  font: 400 13px/1.4 var(--site-mono);
+  letter-spacing: .04em;
+}
+body:has(.project-directory) > .container.is-max-desktop {
+  width: min(var(--site-width), calc(100% - 2 * var(--site-gutter)));
+}
+.content .project-directory > ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.content .project-directory > ul + ul {
+  border-top: 1px solid var(--site-line);
+  margin-top: 28px;
+  padding-top: 28px;
+}
+.content .project-directory li {
+  min-width: 0;
+  padding: 12px;
+  margin: 0;
+  border: 1px solid var(--site-line);
+  border-radius: 6px;
+  background: #111;
+  font-size: 15px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.content .project-directory li > p { margin: 0; }
+.project-directory li:not(:has(img)) { align-self: start; }
+.project-directory li img + br { display: none; }
+.content .project-directory li > p + p { margin-top: 5px; color: var(--site-muted); font-size: 14px; }
+.project-directory li img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  background: var(--site-bg);
+}
+.project-directory li img:is([src$="playback-offset.svg"], [src$="dokomi.png"], [src$="steam-frame-hub.png"]) {
+  object-fit: contain;
+}
+.project-directory li img[src$="dokomi.png"] { padding: 20px; }
+.project-directory a { text-decoration: underline; text-decoration-color: var(--site-quiet); }
+.project-directory a:hover { text-decoration-color: var(--site-text); }
+.project-directory .past-project {
+  position: relative;
+  display: inline-block;
+  width: 11px;
+  height: 8px;
+  margin-left: 7px;
+  border: 1px solid var(--site-muted);
+  border-radius: 2px;
+}
+.project-directory .past-project::before {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 1px;
+  width: 7px;
+  height: 6px;
+  border: 1px solid var(--site-muted);
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
+}
+.site-footer {
+  margin-top: 40px;
+  padding-block: 24px;
+  border-top: 1px solid var(--site-line);
+}
+.site-footer nav { gap: 10px 20px; }
+.site-footer a { font-size: 13px; }
+
+@media (max-width: 680px) {
+  .home-section { padding-block: 22px 28px; }
+  .content .project-directory > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+}
+@media (max-width: 440px) {
+  .header-inner { min-height: 64px; }
+  .wordmark { font-size: 16px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+  .site-footer nav { gap: 10px 16px; }
+}
+@media (max-width: 360px) {
+  .content .project-directory > ul { grid-template-columns: 1fr; }
+}

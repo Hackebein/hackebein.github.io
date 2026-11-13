@@ -1,0 +1,10 @@
+<header class="site-header">
+  <div class="site-shell header-inner">
+    <a class="wordmark" href="/"><span class="brand-mark" aria-hidden="true"></span>{{.config.Sitename}}</a>
+    <nav class="site-nav" aria-label="Site navigation">
+      <a href="/#projects">Projects</a>
+      <a href="https://www.linkedin.com/in/lars-olzem-23773b352/">LinkedIn</a>
+    </nav>
+    {{- if not .config.Readonly }}{{ with .page }}{{ widgets "search" . }}{{ end }}{{ end }}
+  </div>
+</header>
