@@ -246,6 +246,33 @@ body:has(.home-intro) > .container > .content > .columns,
   border-bottom: 0;
   border-radius: 5px 5px 0 0;
 }
+.view > .page-backlinks {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--site-line);
+}
+.content .view .page-backlinks h2 {
+  margin: 0 0 12px !important;
+  color: var(--site-muted);
+  font: 400 13px/1.4 var(--site-mono);
+  letter-spacing: .04em;
+}
+.content .view .page-backlinks ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0;
+  list-style: none;
+}
+.content .view .page-backlinks li { margin: 0; }
+.page-backlinks a {
+  font-size: 14px;
+  text-decoration: underline;
+  text-decoration-color: var(--site-quiet);
+  overflow-wrap: anywhere;
+}
+.page-backlinks a:hover { text-decoration-color: var(--site-text); }
+
 .site-footer {
   margin-top: 40px;
   padding-block: 24px;
