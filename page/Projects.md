@@ -15,10 +15,10 @@
 
   Peep and I built this to bring live heart rate and cycling data into VRChat and OBS. We plan to support Bluetooth Low Energy too.
 
-- ![Package catalog and filters in VPM Manager](/public/project-cards/vpm-manager.png)
-  **[VPM Manager](https://vpmm.dev/)**
+- ![Package catalog and filters in VPMM](/public/project-cards/vpm-manager.png)
+  **[VPMM](/VPM%20Mirror/)**
 
-  A catalog and mirror for VRChat packages.
+  Find VRChat packages, compare versions, and check Unity test results.
 
 - ![The VRChat Feed showing community events and streams](/public/project-cards/vrchat-feed.png)
   **[VRChat Feed](https://vrchat-feed.hackebein.dev/)**
@@ -64,6 +64,16 @@
 
 <!-- Work in progress and prototypes -->
 
+- ![KiCad render of the Steam Frame USB hub PCB with two USB-C sockets](/Steam%20Frame%20PCIe%20USB%20hub/usb-hub-pcb.png)
+  **[Steam Frame PCIe USB hub](/Steam%20Frame%20PCIe%20USB%20hub/)**
+
+  A custom PCB that adds two front USB-C ports to the Steam Frame. Prototype in development.
+
+- ![KiCad render of the KMFC circuit board](/public/project-cards/kmfc-pcb.png)
+  **KMFC**
+
+  A hobby project with a custom ESP-based PCB.
+
 - **[Citizen of VRChat](https://wiki.vrchat.com/wiki/User:Hackebein#Citizen_of_VRChat)**
 
   An idle game that follows you across VRChat. Work in progress.
@@ -71,11 +81,6 @@
 - **[Your Home World](https://wiki.vrchat.com/wiki/User:Hackebein#Your_World)**
 
   A home world concept that brings together the VRChat Feed and the VPMM world.
-
-- ![CAD view of the Steam Frame USB hub enclosure](/public/project-cards/steam-frame-hub.png)
-  **Steam Frame PCIe USB hub**
-
-  A prototype for connecting USB peripherals to the headset.
 
 - **UnrailedVRC**
 
@@ -87,14 +92,14 @@
 
 <!-- Past projects -->
 
-- **Peppercast XR**<span class="past-project" role="img" aria-label="Past involvement" title="Past involvement"></span>
-
-  My involvement has ended.
-
 - ![Arcade cabinets at the Retro Wave Arcade exhibition](/public/project-cards/retro-wave-arcade.jpg)
   **[Retro Wave Arcade](/DoKomi/#experience)**<span class="past-project" role="img" aria-label="Past involvement" title="Past involvement"></span>
 
   Arcade software and networking for DoKomi.
+
+- **Peppercast XR**<span class="past-project" role="img" aria-label="Past involvement" title="Past involvement"></span>
+
+  My involvement has ended.
 
 - **[Steam Frame standalone eye tracking](https://github.com/Hackebein/Steam-Frame-VRChat-Standalone-Eyetracking)**<span class="past-project" role="img" aria-label="Archived project" title="Archived project"></span>
 - **[RisenRP TeamSpeak bot](https://github.com/Hackebein/risenrp.life-ts3bot)**<span class="past-project" role="img" aria-label="Archived project" title="Archived project"></span>

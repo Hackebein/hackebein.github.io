@@ -31,12 +31,6 @@ x:        Hackebein                        # https://x.com/Hackebein
 en_US.UTF-8 UTF-8
 de_DE.UTF-8 UTF-8
 
-[root@hackebein.de ~]# gpg --import <(curl -sL https://hackebein.de/gpg.asc); gpg -k
-pub   rsa4096 2016-06-23 [SC]
-      DE6816258EC5006571413536358CF5698DDD556E
-uid           [ultimate] Lars Olzem <hackebein@gmail.com>
-sub   rsa4096 2016-06-23 [E]
-
 [root@hackebein.de ~]# cat flag.txt
 Segmentation fault
 ```
