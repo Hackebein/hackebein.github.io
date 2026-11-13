@@ -10,6 +10,11 @@
 
   An OBS plugin that keeps audio from VRChat video players in sync.
 
+- ![The ANT+ OSC heart logo](/public/project-cards/antplus-osc.png)
+  **ANT+ OSC**
+
+  Peep and I built this to bring live heart rate and cycling data into VRChat and OBS. We plan to support Bluetooth Low Energy too.
+
 - ![Package catalog and filters in VPM Manager](/public/project-cards/vpm-manager.png)
   **[VPM Manager](https://vpmm.dev/)**
 
