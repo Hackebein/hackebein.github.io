@@ -119,6 +119,37 @@ body:not(:has(.home-intro, .project-directory)) > .container > .content > .view 
 .view a[href^="http"]::after { content: none; }
 .view > p a { text-decoration: underline; }
 .view > p { color: #dedede; }
+
+.view .mermaid {
+  padding: 20px 12px;
+  border: 1px solid var(--site-line);
+  border-radius: 6px;
+  overflow-x: auto;
+}
+.view .mermaid:has(.flowchart-link) > svg { min-width: 520px; }
+.view .mermaid .flowchart-link {
+  stroke: #bfbfbf !important;
+  stroke-width: 2.5px !important;
+}
+.view .mermaid marker[id$="pointEnd"] { overflow: visible; }
+.view .mermaid marker[id$="pointEnd"] path {
+  fill: #e4e4e4 !important;
+  stroke: #e4e4e4 !important;
+  transform-box: fill-box;
+  transform-origin: right center;
+  transform: scale(1.55);
+}
+.view .mermaid span.edgeLabel:not(:empty) {
+  display: inline-block;
+  padding: 2px 7px;
+  border: 1px solid #4b4b4b;
+  border-radius: 4px;
+  background-color: #222 !important;
+  color: #eee !important;
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 1.35;
+}
 /* Override xlog's default numbered headings and large heading margins. */
 .content .view :is(h1, h2, h3, h4, h5, h6) {
   margin: 1.5em 0 .5em !important;

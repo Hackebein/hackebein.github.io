@@ -18,7 +18,6 @@ flowchart TD
     holding -->|tries another stream| searching
     classDef status fill:#181818,stroke:#666,color:#f5f5f5
     class waiting,listening,searching,syncing,aligned,holding status
-    linkStyle default stroke:#aaa
     click waiting href "#waiting-for-a-stream" "Waiting, Scanning and Connecting"
     click listening href "#listening" "Listening"
     click searching href "#searching-and-syncing" "Searching and Syncing"
