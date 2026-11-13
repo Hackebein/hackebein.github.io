@@ -1,5 +1,11 @@
-VPM (VRChat Package Manager) is [VRChat's package format](https://vcc.docs.vrchat.com/vpm/packages/) built on top of [Unity's UPM standard](https://docs.unity3d.com/Manual/upm-manifestPkg.html). You can install or update VPM packages through the first-party VRChat Creator Companion (VCC) or the community GUI ALCOM, which sits on top of the open-source `vrc-get` CLI.
+---
+title: VPMM
+---
 
-Because anyone can publish their own `listing.json`, the VPM ecosystem is highly decentralized. Users must maintain multiple repository URLs, and tracking transitive dependencies or removals is cumbersome. Paid assets often circulate as raw `.unitypackage` files in private Discord servers, complicating version control even further.
+I built VPMM (VPM Manager) because VRChat creator packages are spread across many listings. You can find a package, compare versions, see what it depends on, and check Unity test results where they're available.
 
-[vpmm.hackebein.dev](https://vpmm.hackebein.dev) addresses these pain points with a single, license-respecting catalog. It aggregates public listings (free and paid) and mirrors package archives so they remain accessible even if an original host disappears. You can search the catalog directly inside VCC or ALCOM, while the site itself offers richer metadata—including dependency graphs. An official ALCOM integration is planned so one listing can eventually enrich the entire ecosystem with it's OpenAPI-compatible JSON endpoints. Endpoints for different formats are planned, too.
+You can add a listing to VRChat Creator Companion or ALCOM. If you publish packages, you can also bring your own releases into VPMM, check the results, and share your listing.
+
+[Browse VPMM](https://vpmm.dev/) · [VPM Packager on GitHub](https://github.com/Hackebein/hackebein.vpm.packager)
+
+![VPMM package catalog with search results and filters](/public/project-cards/vpm-manager.png)

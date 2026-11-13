@@ -211,6 +211,11 @@ body:has(.home-intro) > .container > .content > .columns,
   align-items: center;
   padding-top: 8px;
 }
+.writing-feature + .writing-feature {
+  border-top: 1px solid var(--site-line);
+  margin-top: 24px;
+  padding-top: 24px;
+}
 .content .view .writing-feature h3 {
   margin: 0 !important;
   font-size: clamp(28px, 4vw, 42px);
@@ -226,6 +231,27 @@ body:has(.home-intro) > .container > .content > .columns,
   color: var(--site-quiet);
   margin-top: 12px;
   font: 12px/1.4 var(--site-mono);
+}
+.content .twitter-tweet-rendered > iframe {
+  border-radius: 12px;
+}
+.content img.tracked-room-photo {
+  width: 100%;
+  aspect-ratio: 19 / 10;
+  object-fit: cover;
+  object-position: center bottom;
+}
+:is(.object-tracking-gallery, .usb-hub-gallery) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 16px;
+}
+.usb-hub-gallery {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+:is(.object-tracking-gallery, .usb-hub-gallery) img {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
 }
 .content .project-directory > ul {
   display: grid;
@@ -264,7 +290,7 @@ body:has(.home-intro) > .container > .content > .columns,
   border-radius: 3px;
   background: var(--site-bg);
 }
-.project-directory li img:is([src$="playback-offset.svg"], [src$="dokomi.png"], [src$="steam-frame-hub.png"]) {
+.project-directory li img:is([src$="playback-offset.svg"], [src$="dokomi.png"], [src$="usb-hub-pcb.png"]) {
   object-fit: contain;
 }
 .project-directory li img[src$="dokomi.png"] { padding: 20px; }

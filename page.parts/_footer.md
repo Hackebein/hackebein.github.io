@@ -7,7 +7,7 @@
     <a href="https://discord.com/users/146372237199540246">Discord (profile)</a>
     <a href="https://discord.com/invite/AqCwGqqQmW">Research Lab (Discord server)</a>
     <a href="mailto:hackebein@gmail.com">Email</a>
-    <a href="https://www.linkedin.com/in/lars-olzem-23773b352/">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/lars-olzem/">LinkedIn</a>
     <a href="https://www.xing.com/profile/Lars_Olzem">Xing</a>
   </nav>
 </footer>
