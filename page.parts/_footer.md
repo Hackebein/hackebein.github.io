@@ -8,6 +8,5 @@
     <a href="https://discord.com/invite/AqCwGqqQmW">Research Lab (Discord server)</a>
     <a href="mailto:hackebein@gmail.com">Email</a>
     <a href="https://www.linkedin.com/in/lars-olzem/">LinkedIn</a>
-    <a href="https://www.xing.com/profile/Lars_Olzem">Xing</a>
   </nav>
 </footer>
