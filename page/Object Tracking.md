@@ -8,25 +8,56 @@ The setup guide started as written instructions. I turned it into an [interactiv
 
 ## History
 
+<ol id="tracking-history" class="wide-media tracking-scale" role="list" aria-label="From a pole to a room">
+  <li>
+    <figure class="signal">
+      <div class="pole-schematic" role="img" aria-label="A straight pole fixed in place"></div>
+      <figcaption>
+        <time datetime="2022">2022</time>
+        <a href="#2022-pole-sync">Pole Sync</a>
+        <span>1 DOF · Spin in place</span>
+      </figcaption>
+    </figure>
+  </li>
+  <li>
+    <figure class="signal">
+      <img src="/Object%20Tracking/aerial-hoop-2023.jpg" alt="Two VRChat clients showing the same tracked aerial hoop" width="1200" height="675">
+      <figcaption>
+        <time datetime="2023">2023</time>
+        <a href="#2023-the-aerial-hoop">Aerial hoop</a>
+        <span>6 DOF · Move and turn</span>
+      </figcaption>
+    </figure>
+  </li>
+  <li>
+    <figure class="signal">
+      <img class="tracked-room-photo" src="/Object%20Tracking/tracked-room-2026.jpg" alt="Unity scene view of my room layout, with brightly colored walls, a stone arch, and a crescent aerial hoop" width="1998" height="1427">
+      <figcaption>
+        <time datetime="2026">2026</time>
+        <a href="#from-a-prop-to-a-room">Room alignment</a>
+        <span>6 DOF props + a room reference</span>
+      </figcaption>
+    </figure>
+  </li>
+</ol>
+
 ### 2022: Pole Sync
 
-After VRChat added OSC in 2022[^2], I strapped an ESP32 and a motion sensor to my pole. I wanted the pole in VRChat to spin at the same speed as the one in my room. I called it Pole Sync.
+After [VRChat added OSC](https://hello.vrchat.com/blog/vrchat-osc-for-avatars), I strapped an ESP32 and an IMU to my pole. I wanted the pole in VRChat to spin at the same speed as the one in my room. I called it Pole Sync.
 
-I first pictured a candy cane for Christmas. By December I was trying it on an X-Fly pole[^7]. It hangs from above and can swing, so spin alone wasn't enough. I could measure the rotation, but the sensor wasn't enough to tell me where the pole was in the room.
+I first pictured a candy cane for Christmas. By December I was trying it on an [X-Fly pole](https://x-pole.co.uk/shop/aerial/x-fly/x-fly/). It hangs from above and can swing, so spin alone wasn't enough. I could measure the rotation, but the sensor wasn't enough to tell me where the pole was in the room.
 
 ### 2023: The aerial hoop
 
 If I could track a pole, why stop there? I ordered an aerial hoop. I'd only seen a handful of videos and figured that if dancing didn't work out, at least I'd have a swing.
 
-I showed an early version to friends in April. By July[^3], I could show the hoop moving in two VRChat clients side by side. Setting up all the avatar parameters and animators by hand still took too long, so I started turning it into something other people could set up too.
-
-[![Two VRChat windows showing my avatar beside a tracked aerial hoop](aerial-hoop-2023.jpg)](https://x.com/Hackebein/status/1678863438427090951)
+I showed an early version to friends in April. By July, I could [show the hoop moving in two VRChat clients side by side](https://x.com/Hackebein/status/1678863438427090951). Setting up all the avatar parameters and animators by hand still took too long, so I started turning it into something other people could set up too.
 
 ### 2024: The beta and the swinging bench
 
-I put out the first open beta in July[^4] and spent the rest of the year making it easier to set up. When winter came, I swapped the hoop for a swinging bench and brought it into VRChat[^5].
+I put out the [first open beta](https://x.com/Hackebein/status/1819711939246801397) and spent the rest of the year making it easier to set up. When winter came, I swapped the hoop for a [swinging bench](https://x.com/Hackebein/status/1868743681324597273) and brought it into VRChat.
 
-[![An avatar sitting on the tracked swinging bench in red light](swinging-bench-2024.jpg)](https://x.com/Hackebein/status/1868743681324597273)
+![An avatar sitting on the tracked swinging bench in red light](/Object%20Tracking/swinging-bench-2024.jpg)
 
 ### Waiting for native tracking
 
@@ -36,17 +67,15 @@ I waited to see if those pieces would come together. The Dolly shipped, but the 
 
 ### Back to work in 2026
 
-While I was away from it, I heard about people charging around $30 a month for access to versions of the software I'd put on GitHub for free. That played a part in my decision to keep the new source code private for now. The earlier code is still on GitHub.
+While I was away from it, I heard about people charging around $30 a month for access to versions of the software I'd put on GitHub for free. That played a part in my decision to keep the new source code private for now. The [original desktop app](https://github.com/Hackebein/Object-Tracking-App) and [Unity package](https://github.com/Hackebein/Object-Tracking-Unitypackage) are still on GitHub.
 
-I also decided to make this a product I could support. I put together a [Steam store page](https://store.steampowered.com/app/3140770/) and shared a [new beta in July](https://bsky.app/profile/hackebe.in/post/3mr4mx5ynbc27). The Steam app is still in development. Today the setup needs SteamVR, a tracker or controller, and an avatar you can set up in Unity. The desktop app sends the motion over OSC, and the avatar needs the Object Tracking package to use it.
+I also decided to make this a product I could support. I put together a [Steam store page](https://store.steampowered.com/app/3140770/) and shared a [new beta in July](https://bsky.app/profile/hackebe.in/post/3mr4mx5ynbc27). The Steam app is still in development. Today the setup needs SteamVR, a tracker or controller, and an avatar you can set up in Unity. The desktop app sends the motion over OSC, and the avatar uses the Object Tracking package from my [VPM listing](https://vpm.hackebein.dev/).
 
 ### From a prop to a room
 
-In July I tried building a [small virtual studio](https://bsky.app/profile/hackebe.in/post/3mqsikhu4l22b). I posted the uncut test with the tracking glitches still in it. By November, I could track my room reliably enough to start playing with ideas like this.
+In July I tried building a [small virtual studio](https://bsky.app/profile/hackebe.in/post/3mqsikhu4l22b). I posted the uncut test with the tracking glitches still in it. By November, I could [line up the virtual layout with my room](https://x.com/Hackebein/status/2121236139449385235).
 
-<p><img class="tracked-room-photo" src="tracked-room-2026.jpg" alt="Unity scene view of my room layout, with brightly colored walls, a stone arch, and a crescent aerial hoop"></p>
-
-My tracked room setup, November 2026. [Bluesky](https://bsky.app/profile/hackebe.in/post/3n2746nvnas2g) · [X](https://x.com/Hackebein/status/2121236139449385235)
+The hoop had to stay where I could reach it. In a room, it also has to line up with the floor, walls, and furniture. The props still move and turn in all 6 DOF. I can shift the whole room layout in three directions and turn it while keeping the floor level.
 
 ### Tybi's video
 
@@ -57,25 +86,11 @@ Tybi made a video for Object Tracking. It still makes me laugh.
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-[^2]: VRChat Announcement, [VRChat OSC for Avatars](https://hello.vrchat.com/blog/vrchat-osc-for-avatars) at vrchat.com
-[^3]: X Post, [Aerial Hoop Showoff](https://x.com/Hackebein/status/1678863438427090951) at x.com
-[^4]: X Post, [Open Beta Release Announcement](https://x.com/Hackebein/status/1819711939246801397) at x.com
-[^5]: X Post, [Swinging Bench Showoff](https://x.com/Hackebein/status/1868743681324597273) at x.com
-[^7]: Product Page, [X-FLY](https://x-pole.co.uk/shop/aerial/x-fly/x-fly/) at x-pole-co.uk
-
 ## Motivation
 
-I like being able to reach for a cup or pull up a chair in VRChat and find it where I left it in my room. The same idea works for a bottle, a camera on a gimbal, or a whole studio. Jangxx's VRC Tracked Objects[^8] is another take on it.
+I like being able to reach for a cup or pull up a chair in VRChat and find it where I left it in my room. The same idea works for a bottle, a camera on a gimbal, or a whole studio. [Jangxx's VRC Tracked Objects](https://github.com/jangxx/VRC-Tracked-Objects) is another take on it.
 
 I hope many people will discover this tool and use it to create something creative. Don't forget to share your creations on my socials.
-
-[^8]: Github Project, [VRC Tracked Objects](https://github.com/jangxx/VRC-Tracked-Objects) at github.com
-
-## Resources
-
-* [Current VPM listing](https://vpm.hackebein.dev/)
-* [Original desktop app (archived)](https://github.com/Hackebein/Object-Tracking-App)
-* [Original Unity package (archived)](https://github.com/Hackebein/Object-Tracking-Unitypackage)
 
 ## Gallery
 
