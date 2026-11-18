@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420" height="128" viewBox="0 0 420 128" role="img" aria-labelledby="title description">
   <title id="title">Direct feed and VRChat capture</title>
-  <desc id="description">The same waveform appears earlier in the direct feed. A right-pointing arrow shows how far it moves to align with the VRChat capture.</desc>
+  <desc id="description">The same waveform appears earlier in the direct feed. An arrow shows the shift that aligns it with the VRChat capture, where three extra peaks overlap the waveform.</desc>
 
   <defs>
     <path id="waveform" d="M0 0 8 -1 16 0 24 -3 32 -1 40 -5 48 -2 56 -8 64 -3 72 -10 80 -4 88 -14 96 -6 104 -9 112 -3 120 -5 128 -1 136 -3 144 0 152 -1 160 0 168 -3 176 -1 184 -5 192 -3 200 -7 208 -2 216 -5 224 -2 232 -3 240 -1 248 -2 256 0 264 -1 272 0 264 1 256 0 248 2 240 1 232 3 224 2 216 5 208 2 200 7 192 3 184 5 176 1 168 3 160 0 152 1 144 0 136 3 128 1 120 5 112 3 104 9 96 6 88 14 80 4 72 10 64 3 56 8 48 2 40 5 32 1 24 3 16 0 8 1Z"/>
@@ -10,14 +10,21 @@
     <rect x=".5" y=".5" width="419" height="127"/>
     <path d="M52.5 1v126m52.5-126v126m52.5-126v126m52.5-126v126m52.5-126v126m52.5-126v126m52.5-126v126"/>
   </g>
-  <path d="M13 51.5h394M13 104.5h394" fill="none" stroke="#3a3a3a"/>
-
   <g font-family="system-ui, sans-serif" font-size="13" font-weight="650">
     <text x="13" y="21" fill="#f5f5f5">Direct feed</text>
     <text x="13" y="77" fill="#b7b7b7">VRChat capture</text>
   </g>
 
-  <use href="#waveform" x="30" y="51" fill="#fff"/>
-  <use href="#waveform" x="74" y="104" fill="#a0a0a0"/>
+  <g transform="translate(0 51.5)">
+    <path d="M13 0h394" fill="none" stroke="#3a3a3a"/>
+    <use href="#waveform" x="30" fill="#fff"/>
+  </g>
+  <g transform="translate(0 104.5)" fill="#c4424b">
+    <path d="M13 0h394" fill="none" stroke="#3a3a3a"/>
+    <path d="M111 0 116 -2 120 -1 124 -7 128 -4 132 -18 136 -10 140 -12 145 -5 150 -3 154 0 150 3 145 5 140 12 136 10 132 18 128 4 124 7 120 1 116 2Z"/>
+    <path d="M203 0 208 -3 213 -2 217 -9 221 -6 225 -16 229 -7 233 -11 238 -4 242 -2 246 0 242 2 238 4 233 11 229 7 225 16 221 6 217 9 213 2 208 3Z"/>
+    <use href="#waveform" x="74" fill="#a0a0a0"/>
+    <path d="M265 0 269 -1 272 -3 275 -2 278 -4 281 -2 285 0 281 2 278 4 275 2 272 3 269 1Z"/>
+  </g>
   <path d="M118 28h44m-5-4 5 4-5 4" fill="none" stroke="#f5f5f5" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

@@ -5,6 +5,7 @@ VaOBS gets the stream URL from the VRChat log, takes the audio from the stream, 
 ## How the sync works
 
 ```mermaid
+%%{init: {"theme": "dark"}}%%
 flowchart TD
     syncing["Syncing"] -->|delay confirmed| aligned["Aligned"]
     aligned -->|match gets unclear| holding["Holding timing"]
@@ -21,7 +22,11 @@ flowchart TD
 
 VaOBS measures the delay by comparing the clean feed with what OBS actually hears from VRChat. It keeps a short history of both on the same clock, then looks for where a recent passage from the VRChat mix lines up best with the clean feed. That comparison is called cross-correlation. People can talk over the music as long as enough of it is still audible to match.
 
-![The same passage arrives earlier in the clean feed. VaOBS shifts it later to line up with the VRChat capture.](/VaOBS/playback-offset.svg)
+<figure class="signal wide-media timing-figure" id="timing-diagram">
+
+![The same passage arrives earlier in the direct feed. VaOBS shifts it later to line up with the VRChat capture, which also contains three extra peaks.](/VaOBS/playback-offset.svg)
+
+</figure>
 
 ### Aligned
 
