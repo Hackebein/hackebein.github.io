@@ -121,7 +121,7 @@ body:not(:has(.home-intro, .project-directory)) > .container > .content > .view 
 .view > .table-of-contents #table-of-contents-list a { max-width: none; }
 .view a { text-underline-offset: .24em; }
 .view a[href^="http"]::after { content: none; }
-.view > p a { text-decoration: underline; }
+.view > :is(p, ul, ol) a { text-decoration: underline; }
 .view > p { color: #dedede; }
 
 .view .mermaid {
