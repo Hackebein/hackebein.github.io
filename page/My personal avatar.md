@@ -18,4 +18,4 @@ I spent about five years in VRChat before I started changing much beyond texture
 
 Sometimes I dress up because I like how something looks on me. Sometimes an outfit gives me an idea for a character and I want to see what it feels like to be them for an evening. That's become one of my favorite parts of having an avatar I feel at home in.
 
-I've been building the world around my avatar too, in my [VTubing Studio](/VTubing%20Studio/).
+I've been building the world around my avatar too, in my VTubing Studio.
