@@ -110,7 +110,7 @@ A README is handy when I need to look up a menu name. A video is handy when I wa
 
 ## Gallery
 
-<div class="object-tracking-gallery">
+<div class="object-tracking-gallery wide-media">
 
 <figure class="signal">
   <img src="aerial-hoop-performance-2023.jpg" alt="My avatar performing on an aerial hoop in a dim VRChat room" loading="lazy">
