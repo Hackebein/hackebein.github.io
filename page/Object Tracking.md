@@ -2,9 +2,7 @@ Object Tracking uses SteamVR trackers and controllers to move objects on your VR
 
 The app is still in development. I'm working toward a Steam release.
 
-[Wishlist on Steam](https://store.steampowered.com/app/3140770/) · [Performance demo](https://x.com/Hackebein/status/1817729114142343460)
-
-The setup guide started as written instructions. I turned it into an [interactive walkthrough](https://object-tracking.hackebein.dev/#how) so you can compare each step with what you see in your own Unity project. I explain what led to that change in Why I made the Object Tracking guide interactive.
+[Wishlist on Steam](https://store.steampowered.com/app/3140770/) · [Performance demo](https://x.com/Hackebein/status/1817729114142343460) · [Setup guide](#why-i-made-the-object-tracking-guide-interactive)
 
 ## History
 
@@ -91,6 +89,24 @@ Tybi made a video for Object Tracking. It still makes me laugh.
 I like being able to reach for a cup or pull up a chair in VRChat and find it where I left it in my room. The same idea works for a bottle, a camera on a gimbal, or a whole studio. [Jangxx's VRC Tracked Objects](https://github.com/jangxx/VRC-Tracked-Objects) is another take on it.
 
 I hope many people will discover this tool and use it to create something creative. Don't forget to share your creations on my socials.
+
+<h2 id="why-i-made-the-object-tracking-guide-interactive">Setup guide</h2>
+
+The [interactive setup guide](https://object-tracking.hackebein.dev/#how) puts the steps next to an illustrated Unity editor. Pick **Check the LEDs** and the guide takes you to the five green lights on the Tracker component. You can leave that step open while you check your own setup.
+
+[![The setup guide with Check the LEDs selected and the cursor pointing at the five green lights in the illustrated Unity Inspector](/Why%20I%20made%20the%20Object%20Tracking%20guide%20interactive/check-the-leds.jpg)](/Why%20I%20made%20the%20Object%20Tracking%20guide%20interactive/check-the-leds.jpg)
+
+### Let the reader decide when to move on
+
+I'd already written out the steps. I kept thinking about what happens right after you read one. You switch back to Unity, look at the Inspector, and wonder if you're looking at the right thing.
+
+That's why manuals have pictures. It's quicker to spot five green lights in a picture and compare them with your screen than to read a description and work out where to look. I wanted to keep that side-by-side comparison and let people step through it at their own pace.
+
+The bit I wanted to try was giving people control of the pace. You can stop at the lights while you sort out your own setup, or jump back to see which menu added the tracker. You can also skip straight to the step you came for. Each click has a reason. It shows you what to look for or what should have changed.
+
+There's a small piece of research behind that hunch. Richard Mayer and Paul Chandler found that letting people advance an animation in sections helped them apply what they'd learned in a new situation, though it didn't improve how much they remembered. They were teaching how lightning forms. My question is whether the same idea helps when you're switching between a guide and your own Unity project. [Mayer and Chandler, 2001](https://tecfa.unige.ch/tecfa/teaching/methodo/Mayer_Chandler01.pdf)
+
+A README is handy when I need to look up a menu name. A video is handy when I want to see the whole thing done. With this guide, I'm trying to make it easier to pick up where you left off while you're doing the work yourself.
 
 ## Gallery
 

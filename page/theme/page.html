@@ -2,12 +2,12 @@
 
 <div class="columns content is-mobile">
 
-  <div class="column">
+  <div class="column page-dates">
     {{ if not .page.ModTime.IsZero }}
-    <span class="icon-text">
-      <span class="icon"> <i class="fa-solid fa-clock"></i> </span>
-      <span>Edited: {{ago .page.ModTime}}</span>
-    </span>
+    <span>Edited <time datetime="{{ .page.ModTime.Format "2006-01-02" }}">{{ .page.ModTime.Format "2 January 2006" }}</time></span>
+    {{ end }}
+    {{ with (properties .page).first_release }}
+    <span>First release {{ .Value }}</span>
     {{ end }}
   </div>
 
