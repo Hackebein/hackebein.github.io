@@ -104,6 +104,11 @@ body > .container.is-max-desktop > .content > .columns {
   color: var(--site-muted);
   font-size: 0.875rem;
 }
+.page-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+}
 body:not(:has(.home-intro, .project-directory)) > .container > .content > .view > :not(.site-footer, .wide-media, style, script) {
   max-width: var(--reading-width);
 }
@@ -193,27 +198,6 @@ body:has(.home-intro) > .container > .content > .columns,
 .about-copy a { text-decoration: underline; }
 .section-heading { margin-bottom: 0.75rem; }
 .content .view .section-heading h2 { margin: 0 !important; }
-.writing-feature {
-  display: grid;
-  grid-template-columns: 1.13fr 1fr;
-  gap: clamp(1.5rem, 4.4vw, 3.5rem);
-  align-items: center;
-  padding-top: 0.5rem;
-}
-.writing-feature + .writing-feature {
-  border-top: 0.0625rem solid var(--site-line);
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-}
-.content .view .writing-feature h3 {
-  margin: 0 !important;
-  font-size: clamp(1.75rem, 4vw, 2.625rem);
-  line-height: 1.05;
-  letter-spacing: -.045em;
-}
-.writing-feature h3 a:hover { text-decoration: underline; }
-.content .writing-feature p { max-width: 43ch; margin: 0.875rem 0 0; color: var(--site-muted); }
-.read-link { display: inline-block; margin-top: 1.25rem; font-size: 0.875rem; font-weight: 650; text-decoration: underline; }
 .content .signal { margin: 0; text-align: start; }
 .content .signal img { display: block; width: 100%; height: auto; }
 .content .signal figcaption {
@@ -460,7 +444,6 @@ body:has(.home-intro) > .container > .content > .columns,
 .site-footer a { font-size: 0.8125rem; }
 
 @media (max-width: 42.5rem) {
-  .writing-feature { grid-template-columns: 1fr; }
   .home-section { padding-block: 1.375rem 1.75rem; }
   .content .project-directory > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
 }
