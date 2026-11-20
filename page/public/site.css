@@ -191,6 +191,12 @@ body:has(.home-intro) > .container > .content > .columns,
   font-size: clamp(1.0625rem, 2vw, 1.3125rem);
   line-height: 1.52;
 }
+.content .home-intro .home-alias {
+  margin-top: 0.25rem;
+  color: var(--site-text);
+  font-weight: 700;
+}
+.content .home-intro .home-alias + p { margin-top: 0.5rem; }
 .home-section { border-top: 0.0625rem solid var(--site-line); padding-block: 1.5rem 2.25rem; }
 .about-copy { max-width: 68ch; color: #dedede; }
 .content .about-copy p { margin: 0; }

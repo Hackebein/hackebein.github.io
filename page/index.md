@@ -2,15 +2,16 @@
 
 # Lars Olzem
 
-<p>Developer and engineer</p>
+<p class="home-alias">aka Hackebein</p>
+<p>Developer and engineer, designing this world</p>
 
 </header>
 
 <section class="home-section" id="about" aria-labelledby="about-title">
   <div class="section-heading"><h2 id="about-title">About me</h2></div>
   <div class="about-copy">
-    <p>I lead projects from a sketch to a rolling product, doing the research, designing hardware, and writing software along the way.</p>
-    <p>After more than a decade in e-commerce, I now work on software development and DevOps for secure cloud infrastructure. Outside work, I build tools for live performance production and automation in VRChat.</p>
+    <p>I take projects from a sketch to a rolling product. I design circuit boards, build and test prototypes, write software, and run the infrastructure behind services and web archives. I spent more than a decade building and operating e-commerce platforms and now work on software and DevOps for SINA Cloud, where reliability and digital sovereignty matter for government and critical infrastructure.</p>
+    <p>I got the name Hackebein after breaking a few legs in school sports. When I was new to the internet, I used it for a throwaway account and ended up using it everywhere.</p>
   </div>
 </section>
 
