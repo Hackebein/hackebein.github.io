@@ -74,7 +74,6 @@
 - **[VRChat community testing](https://wiki.vrchat.com/wiki/User:Hackebein#Bug_hunting_and_quality_assurance)**
 - **[My personal avatar](https://wiki.vrchat.com/wiki/User:Hackebein)**
 - **Excavator Fishing**
-- **The Fractured Fields**
 - **VR Aerial Dance**
 - **VR Pole Dance**
 - **Sanctum**
